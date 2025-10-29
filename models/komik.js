@@ -18,9 +18,9 @@ module.exports = (sequelize, DataTypes) => {
         allowNull: false
     },
     }, {
-      tableName: 'komiks',
+      tableName: 'komik',
       freezeTableName: true,
-      timestamps: false
+      timestamps: true
     });
     return Komik;
 };
