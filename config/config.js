@@ -1,3 +1,5 @@
+const { text } = require('express');
+
 require('dotenv').config();
 
 const config = {
@@ -7,7 +9,7 @@ const config = {
     database: process.env.DB_NAME_DEVELOPMENT,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: "mysql"
+    dialect: process.env.DB_DIALECT 
   },
   test: {
     username: process.env.DB_USERNAME,
@@ -15,7 +17,7 @@ const config = {
     database: process.env.DB_NAME_TEST,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: "mysql"
+    dialect: process.env.DB_DIALECT 
   },
   production: {
     username: process.env.DB_USERNAME,
@@ -23,8 +25,12 @@ const config = {
     database: process.env.DB_NAME_PRODUCTION,
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
-    dialect: "mysql"
+    dialect: process.env.DB_DIALECT 
   }
 };
 
-module.exports = config;
+module.exports = {
+  development,
+  test,
+  production
+};
